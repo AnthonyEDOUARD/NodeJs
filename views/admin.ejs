@@ -23,14 +23,14 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/client">Clients</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
+                </li> 
             </ul>
         </div>
     </nav>
-    <form>
+    <section> 
+        <ul id="users"></ul>
+    </section>
+    <!--<form>
             <div class="form-group">
               <label for="exampleInputEmail1">Login</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre login">
@@ -45,7 +45,8 @@
               <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
             </div>
             <button type="submit" class="btn btn-primary">Se connecter</button>
-          </form>
+          </form>-->
 </body>
-
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/client.js"></script>
 </html>

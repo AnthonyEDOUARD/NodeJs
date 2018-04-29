@@ -1,5 +1,12 @@
 var socket = io();
 
+
+  /**
+ * Liste des utilisateurs connectés
+ */
+var users = [];
+var users2 =[];
+
 /**
  * Connexion d'un utilisateur
  */
@@ -8,14 +15,16 @@ $('#login form').submit(function (e) {
   var user = {
     username :  $('#m').val().trim()
   };
-  if (user.username.length > 0) { // Si le champ de connexion n'est pas vide
+  if (user.username.length > 0 && user.username ==! $.inArray(users)) { // Si le champ de connexion n'est pas vide
     socket.emit('user-login', user);
-     $('body').attr('id','logged-in'); // Cache formulaire de connexion
+     $('body').removeAttr('id'); // Cache formulaire de connexion
     //$('#chat input').focus();  Focus sur le champ du message
-    console.log(user);
-    
+    users.push(user);
+    console.log(users);   
   }
 });
+
+
 
 
 
